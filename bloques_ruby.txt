@@ -1,0 +1,83 @@
+proc es un bloque de codigo sin ejecutar que se ejecuta al aplicarle la funcion call ejemplo
+
+un_numero = 7
+incrementador = proc {un_numero+= 1}
+
+Aquí un_numero sigue valiendo 7 la que el bloque no se ejecutó
+
+otro_numero = 5
+duplicador = proc {otro_numero = otro_numero * 2}
+duplicador.call
+
+otro_numero ahora vale 10 ya que se aplico la funcion call a la variable duplicador y se ejecuto el bloque
+
+los bloques también pueden recibir parametros
+
+un_numero = 3
+sumar_a_otros_dos = proc {|un_sumando, otro_sumando| un_numero+= un_sumando + otro_sumando}
+
+sumar_a_otros_dos.call(1, 2) luego de la invocacion de call un_numero = 6
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+select es un bloque que apartir de una lista devuelve otra lista filtrada con los elementos que cumplan la condicion declarada en el bloque
+
+algunos_numeros = [1, 2, 3, 4, 5, 6]
+mayores_a_3 = algunos_numeros.select {|un_numero| un_numero > 3} aca el parametro un_numero va tomando el valor de cada uno de los elementos
+de la lista algunos_numeros y viendo si cumple la condicion, si es asi lo agrega a la nueva lista que retornara
+
+mayores_a_3 = [4, 5, 6] // select no produce efectos sobre la lista original
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+find funciona practicamente igual que select solo que en vez de devolver una lista devulve el primer elemento de la lista que cumpla 
+con la condicion declarada en el bloque
+
+algunos_numeros = [1, 2, 3, 4, 5]
+uno_mayor_a_3 = algunos_numeros.find { |un_numero| un_numero > 3 }aca el parametro un_numero va tomando el valor de cada uno de los elementos
+de la lista algunos_numeros y viendo si cumple la condicion, cuando algun elemento cumpla la condicion se devuelve ese elemento
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+all? devuelve true si todos los elementos de una lista cumplen la condicion definida en el bloque
+
+algunos_numeros = [3, 4, 5]
+algunos_numeros.all? {|un_numero| un_numero > 1} devuelve true
+algunos_numeros.all? {|un_numero| un_numero < 4} devuelve false
+
+any? devuelve true si al menos uno de los elementos de una lista cumple la condicion definida en el bloque
+
+algunos_numeros.any? {|un_numero| un_numero < 4} devuelve true
+algunos_numeros.any? {|un_numero| un_numero < 3} devuelve false
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+map es un bloque que apartir de una lista retorna otra lista con los valores originales de la listas habiendoles aplicado una funcion
+
+def sumar_dos num
+  num + 2
+end
+
+lista = [1, 2, 3]
+lista2 = lista.map {|un_numero| sumar_dos un_numero} se le pasa como parametro a la funcion sumar_dos cada elemento de la lista y
+el retorno de esa funcion se agrega a la lista que devolver map
+lista2 = [3, 4, 5]
+
+si la funcion que se utiliza dentro de el map tiene efectos en los elementos osea los modifica estos cambios si se veran
+en la lista original, pero esto seria un mal uso de map
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+count devuelve un numero que representa la cantidad de elementos de una lista que cumplen una condicion
+
+lista = [1, 2, 3, 4, 5, 6, -1]
+cantidad_mayores_a_3 = lista.count {|un_numero| un_numero > 3}
+cantidad_mayores_a_3 = 3
+
+------------------------------------------------------------------------------------------------------------------------------------------
+sum devuleve la sumatoria de todos los elementos de una lista mientras que sean enteros
+
+lista = [1, 2, 3, 4, 5]
+suma = lista.sum {|un_numero| un_numero}
+suma = 15

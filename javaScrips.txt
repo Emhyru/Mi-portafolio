@@ -1,0 +1,436 @@
+function extraer(saldo, monto) {
+  return Math.max(saldo-monto, 0);
+}
+______________________________________
+function leGustaLeer(libros) {
+  return libros > 20 ; 
+}
+____________________________________
+function esFinDeSemana(dia) {
+  return dia === "sabado" || dia === "domingo";
+}
+___________________________________________
+function longitudNombreCompleto(nombre, apellido) {
+  return longitud (nombre+  " " + apellido);
+}
+________________________________________________
+function gritar(nombre) {
+  return convertirEnMayuscula ( "¡" + nombre + "!");
+}
+____________________________________________________
+function maximo(menor, mayor) {
+  if (mayor > menor) {
+    return mayor;
+ } else {
+     return menor;
+   }
+}
+_________________________________________________________
+> <
+
+function signo(numero) {
+  if (numero>0) {
+    return (1);
+    }  else  if (numero<0) {
+    return (-1);
+  } else {
+    return (0);
+  } 
+}
+_____________________________________________
+function esNumeroDeLaSuerte(numero) {
+  return numero>= 0 && numero!== 15 && numero<100;
+}
+________________________________________________
+
+function medallaSegunPuesto(puesto) {
+   if (puesto === 1) {
+    return "oro";
+    } else if (puesto ===2) {
+    return "plata";
+  } else if (puesto ===3) {
+    return "bronce";
+  } else  {
+    return"nada";
+  }
+}
+__________________________________________
+
+<=menorigual
+>= mayorigual
+
+>mayor
+_____________________________
+function meConviene(pulgadas,memoria) {
+  return (cuantoCuesta(pulgadas,memoria)<6000) &&(pulgadas>=32)&&(memoria>=8);
+}
+_________________________________________________________________
+function perimetroTriangulo(lado1,lado2,lado3) {
+  return lado1+lado2+lado3;
+}
+
+function areaTriangulo(base,altura) {
+  return (base*altura/2)
+}
+______________________________________________________
+function perimetroCuadrado(lado) {
+  return (lado*4);
+}
+
+function areaCuadrado(lado) {
+  return (lado*lado)
+}
+_______________________________________________
+function estaCerca(frecuencia) {
+  return (frecuencia>=437) && (frecuencia<=443) && (frecuencia!==440);
+}
+_________________________________________________
+
+function valorEnvido(nro) {
+  if (nro>= 1 && nro<= 7){
+    return nro}
+ if (nro>= 10 && nro<=12){
+    return 0
+  }
+    return 0
+}
+_________________________________________
+function valorCantoTruco(canto){
+  if (canto==="truco") {
+    return 2;
+  }  if (canto==="retruco") {
+    return 3;
+  } if (canto==="vale cuatro"){
+   return 4;
+}
+}
+________________________________________
+
+function puntosDeEnvidoTotales(nr1,palo1,nr2,palo2) {
+  if (palo1===palo2){
+  return valorEnvido(nro1)+valorEnvido(nro2)+20
+  } else {
+    return Math.max(valorEnvido(nro1),valorEnvido(nro2)) 
+  }
+
+}
+_____________________________________
+function funcionEgocentrica() {
+  imprimir("soy una función que imprime por pantalla");
+  imprimir("y estoy por devolver el valor 5");
+  return 5;
+}
+___________________________________________
+function versosMartinFierro() {
+    imprimir("Aquí me pongo a cantar");
+    imprimir("Al compás de la vigüela;");
+    imprimir("Que el hombre que lo desvela");
+    imprimir("Una pena extraordinaria");
+}
+___________________________________________
+function elefantesEquilibristas(numero){
+  return numero+" "+"elefantes se balanceaban";
+}
+__________________________________________________
+let pi = 3.14159265358979;
+
+function perimetroCirculo(radio){ 
+ return (2*pi)*radio
+}
+
+function areaCirculo(radio){
+  return (pi*radio)*radio
+}
+____________________________________________
+let cargaMaximaEnKilogramos=300
+function ascensorSobrecargado(personas){
+  return pesoPromedioPersonaEnKilogramos*personas>cargaMaximaEnKilogramos
+}
+_____________________________________________
+function aumentarFortuna(){
+   pesosEnMiBilletera=pesosEnMiBilletera*2
+}
+Actualizaciones como duplicar, triplicar, incrementar en uno o en una cierta cantidad son tan comunes que JavaScript presenta algunos atajos:
+x += y; //equivalente a x = x + y;
+x *= y; //equivalente a x = x * y;
+x -= y; //equivalente a x = x - y;
+x++;    //equivalente a x = x + 1;
+
+logica booleana
+cuando programamos trabajamos con booleanos que representan valores de verdad. Podemos operar con ellos mediante lo que denominamos operadores lógicos, como la conjunción y la disyunción.
+
+let mochilaAbierta = true;
+
+function usarCierre(){
+  mochilaAbierta=!mochilaAbierta;
+}
+_____________________________________
+function esMayorDeEdad(numero){
+  return numero>=18;
+}
+function esMenorDeEdad(numero){
+  return !esMayorDeEdad(numero)
+}
+_________________________________________________________________________________________________
+function esPeripatetico(profesion,nacionalidad,cantidadDeKilometrosCaminados){
+  return profesion==="filosofo"&&nacionalidad==="griego"&&cantidadDeKilometrosCaminados>2;
+}
+_______________________________________________________________________________________________
+function esFinDeSemana(dia){
+  return dia==="sabado"||dia==="domingo"
+}
+
+function estaCerrado(esFeriado, dia, horario) {
+  return esFeriado||esFinDeSemana(dia)||!dentroDeHorarioBancario(horario)
+}
+_________________________________________________________________________________
+function tieneContraste(fondo,letra,color){
+  return (esTonoClaro(fondo)&&!esTonoClaro(letra))||(!esTonoClaro(fondo)&&esTonoClaro(letra)) 
+}
+______________________________________________________________________________________________
+pensá cómo funciona la función xor(A, B). Esta función tiene que retornar true si A y B no valen lo mismo y false si efectivamente valen lo mismo.
+
+Si A === B , es decir, si A tiene el mismo valor que B, la función tiene que retornar false
+Si A !== B, es decir, si A no tiene el mismo valor que B, la función tiene que retornar true
+
+¿Alguna de esas operaciones cumplen con lo que queremos que retorne la función xor?
+A diferencia del and, or y not, el xor no suele estar definido en los lenguajes. Sin embargo, ahora que sabés cómo funciona, si alguna vez lo necesitás podés definirlo a mano.
+
+function xor(a,b){
+  return a&&!b || !a&&b;
+}
+____________________________________________________________________________________________________________
+function sePuedeConcentrar(bebida,temperatura,programa){
+  return bebida==="mate"&&temperatura===80&&programa|| bebida==="té"&&temperatura>=95&&programa
+}
+o
+function sePuedeConcentrar(infusion, temperatura, estaProgramando) {
+  return infusionATemperaturaCorrecta(infusion, temperatura) && estaProgramando;
+}
+_______________________________________________________________________________________________________________
+La precedencia de los operadores && y || es tal que tiene mayor precedencia el && que el || (así como el * tiene más precedencia que el + en las expresiones aritméticas). Entonces, la expresión condicion1 || condicion2 && condicion3 es equivalente a condicion1 || (condicion2 && condicion3), por tener el && mayor precedencia (es decir, en caso de estar con otra operación al mismo nivel, se resuelve primero). O sea, que alcanza que se cumpla la condicion1 para que la persona pueda subirse al juego (es decir que teniendo más de 1.5m se puede subir aunque esté enfermo). Y eso es diferente a lo que se plantea en la consigna.
+
+Si vos quisieras forzar otra forma de evaluar la expresión anterior, tendrías que usar paréntesis (para que se haga primero el || y después el &&). Cómo sería eso? Podrías poner (condicion1 || condicion2) && condicion3
+xor, que es verdadero si sólo una de sus proposiciones es verdadera.
+_____________________________________________________________________________________________________________________
+function puedeSubirse(altura,acompañada,afeccionCardiaca){
+  return (altura>=1.5||altura>=1.2&&acompañada)&& !afeccionCardiaca 
+}
+_______________________________________________________________________
+function contiene(lista1,numero){
+  return 
+(lista1,numero)>= 0;
+}
+___________________________________________
+function medallaSegunPuesto(puesto){
+  let medallas=[0,"oro","plata","bronce"];
+  if (puesto<=3){
+  return medallas[puesto];
+   } else {
+    return "nada";
+}
+}
+_______________________________________________________
+REGISTROS
+En las listas podemos guardar muchos elementos de un mismo tipo que representen una misma cosa (por ejemplo todos números, o todos strings). No existen límites para las listas: pueden tener muchos elementos, ¡o ninguno!
+
+En un registro vamos a guardar información relacionada a una única cosa (por ejemplo un monumento o una persona), pero los tipos de los campos pueden cambiar. Por ejemplo, el nombre y la ubicación de un monumento son strings, pero su año de construcción es un número.
+
+_________________________________________________________________________________________________
+
+let torreEiffel = { nombre: "Torre Eiffel", locacion: "París, Francia", anioDeConstruccion: 1889 };
+____________________________________________________________________________________________________________
+
+function temperaturaDePlaneta(planeta){
+  return planeta.nombre + " tiene una temperatura promedio de " + planeta.temperaturaPromedio + " grados";
+}
+_____________________________________________________________________________________________________________________
+function moverArchivo(file,nuevaruta){ 
+  file.ruta = nuevaruta
+}
+_________________________________________________________________________________________________
+function esDelMilenioPasado(archivo){
+ return anio(archivo.creacion)<"2000";
+}
+__________________________________________________________________________
+function masDificilDeCocinar(postre1,postre2){
+  if (longitud(postre1.ingredientes)> longitud(postre2.ingredientes)) {
+    return postre1;
+   }  else {
+    return postre2;
+  }
+}
+_________________________________________________________________________
+function agregarAPostresRapidos(postresRapidos,postre) {
+  if (postre.tiempoDeCoccion<=60) {
+    agregar(postresRapidos,postre)
+  }
+}
+______________________________________________________________________________
+function endulzarMenu (menu) {
+  agregar(menu.postre.ingredientes, "azúcar")
+}
+________________________________________________________________________
+RECORRIDOS
+FOR OF=filtrar y/o transformar los elementos de una lista.
+___________________________________________________________________________
+function gananciaSemestre(balances) {
+  return balances[0].ganancia + balances[1].ganancia +
+         balances[2].ganancia + balances[3].ganancia +
+         balances[4].ganancia + balances[5].ganancia;
+}
+_______________________________________________________________________________
+//En enero la empresa ganó $80, en febrero, $453, en marzo $1000
+let balancesPrimerTrimestre = [
+  { mes: "enero", ganancia: 80 }, 
+  { mes: "febrero", ganancia: 453 }, 
+  { mes: "marzo", ganancia: 1000 }
+];
+_____________________________________________________________________
+> gananciaTotal([
+      { mes: "enero", ganancia: 2 }, 
+      { mes: "febrero", ganancia: 3 }
+  ])
+> gananciaTotal([
+      { mes: "enero", ganancia: 2 }, 
+      { mes: "febrero", ganancia: 3 }, 
+      { mes: "marzo", ganancia: 1 }, 
+      { mes: "abril", ganancia: 8 }, 
+      { mes: "mayo", ganancia: 8 }, 
+      { mes: "junio", ganancia: -1 }
+  ])
+> gananciaTotal([])
+__________________________________________________________
+function gananciaTotal2(balancesDeUnPeriodo) {
+  let sumatoria = 0;
+  sumatoria = sumatoria + balancesDeUnPeriodo[0].ganancia;
+  sumatoria = sumatoria + balancesDeUnPeriodo[1].ganancia;
+  return sumatoria;
+}
+_____________________________________________________________
+function gananciaTotalN(unPeriodo) {
+  let sumatoria = 0; // esto siempre está
+  //... etc
+  return sumatoria; //esto siempre está
+}
+(sumatoria = sumatoria + ...); necesitamos una por cada elemento de la lista.
+_________________________________________________________________________________
+function gananciaTotal(balancesDeUnPeriodo) {
+  let sumatoria = 0;
+  for (let balance of balancesDeUnPeriodo) {
+    sumatoria = sumatoria + balance.ganancia;
+  }
+  return sumatoria;
+}
+el for...of nos permite visitar y hacer algo con cada elemento de una lista; en este caso, estaremos visitando cada balance de balancesDeUnPeriodo.
+___________________________________________________________________________________
+function cantidadDeBalancesPositivos(balancesDeUnPeriodo) {
+  let cantidad=0;
+  for (let balance of balancesDeUnPeriodo) {
+  if(balance.ganancia >0)
+    cantidad=cantidad+1
+  }
+  return cantidad;
+}
+_______________________________________________________________________________
+function gananciaPromedio(balances) {
+  return gananciaTotal(balances)/longitud(balances)
+}
+(promedio)
+_________________________________________________________________________________
+function gananciaPositiva(balancesDeUnPeriodo) {
+  let sumatoria=0;
+  for (let balance of balancesDeUnPeriodo) {
+  if(balance.ganancia >0)
+    sumatoria=sumatoria+balance.ganancia
+  }
+  return sumatoria;
+}
+function promedioGananciasPositivas(balancesDeUnPeriodo) {
+return gananciaPositiva(balancesDeUnPeriodo)/ cantidadDeBalancesPositivos(balancesDeUnPeriodo);
+}
+______________________________________________________________________
+una de promedio generica seria asi:
+function promedio(listaDeNumeros) {
+    return sumatoria(listaDeNumeros) / longitud(listaDeNumeros);
+}
+
+function sumatoria(listaDeNumeros) {
+  let sumatoria = 0;
+  for (let numero of listaDeNumeros) {
+    sumatoria = sumatoria + numero;
+  }
+  return sumatoria;
+}
+__________________________________________________________________________________
+function ganancias(balancesDeUnPeriodo) {
+  let ganancias = [];
+  for (let balance of balancesDeUnPeriodo) {
+   agregar(ganancias, balance.ganancia)
+  }
+  return ganancias;
+}
+____________________________________________________________________
+function balancesPositivos(balancesDeUnPeriodo) {
+  let balances = [];
+  for (let balance of balancesDeUnPeriodo) {
+  if(balance.ganancia>0)
+    agregar(balances, balance)
+  }
+  return balances;
+}
+______________________________________________________________
+function gananciasDeBalancesPositivos(balancesDeUnPeriodo){
+  return ganancias(balancesPositivos(balancesDeUnPeriodo))
+}
+
+function promedioDeBalancesPositivos(balancesDeUnPeriodo) {
+  return promedio(gananciasDeBalancesPositivos(balancesDeUnPeriodo))
+}
+_____________________________________________________________________
+function maximaGanancia(balancesDeUnPeriodo) {
+  return maximo(ganancias(balancesDeUnPeriodo));
+}
+_______________________________________________________________
+function meses(balancesDeUnPeriodo) {
+  let todosLosMeses=[];
+  for (let balance of balancesDeUnPeriodo) {
+  agregar (todosLosMeses, balance.mes);
+  }
+  return todosLosMeses;
+}
+
+function afortunados(balancesDeUnPeriodo) {
+  let mejoresMeses=[];
+  for(let balance of balancesDeUnPeriodo) {
+   if (balance.ganancia>1000) {
+     agregar (mejoresMeses, balance);
+   }
+  }
+  return mejoresMeses;
+}
+
+function mesesAfortunados(balancesDeUnPeriodo) {
+  return meses(afortunados(balancesDeUnPeriodo))
+__________________________________________________________________
+
+
+el xor es un or exclusivo osea
+and(&&) da true cuando ambos lados de la expresion son true
+or(||) da true cuando al menos un lado de la expresion es true
+xor da true cuando uno y solo uno de los lados de la expresion es true
+[21:55]
+true xor true === false
+false xor false === false
+false xor true === true
+true xor false === true
+
+"permitime(let) que por cada elemento (la variable) de (of) esta lista, haga lo que está entre llaves"
+for: recorrer una elemento de una lista o una lista de un registro
+let: variable temporal en donde se almacenará en cada vuelta de for el recorrido
+of: elemento o registro a recorrer
+
+funciones, que siempre retornan algo y no producen ningún efecto
+procedimientos, que no retornan nada, y producen efectos
+
+
